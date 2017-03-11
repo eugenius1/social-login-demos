@@ -97,8 +97,8 @@ function facebookGetUserDetails() {
 
         // document.getElementById('facebook-card-title').innerHTML = response.name;
         document.getElementById('facebook-cover').innerHTML = 
-          '<div class="big-img intro-header" style="background-image: url(&quot;' + 
-          response.cover.source + '&quot;);"><div class="page-heading"><h2>' + response.name + '</h2></div></div>';
+          '<div class="cover-img" style="background-image: url(&quot;' + 
+          response.cover.source + '&quot;);"><div class="heading"><h2>' + response.name + '</h2></div></div>';
 
         document.getElementById('facebook-picture').innerHTML =
           '<img src="https://graph.facebook.com/v2.7/' + response.id + 

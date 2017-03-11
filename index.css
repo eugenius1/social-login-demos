@@ -1,4 +1,5 @@
-/* center main images */
+/* --- centering --- */
+
 article img {
   display: block;
   margin: auto;
@@ -8,7 +9,20 @@ footer .copyright {
     text-align: center;
 }
 
-/* --- Social share buttons --- */
+/* --- Heading on top of cover photo --- */
+
+.cover-img {
+  background: no-repeat center center;
+}
+
+.cover-img .heading {
+  text-align: center;
+  color: #FFF;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* --- Social share buttons --- 
+https://gist.github.com/thebigreason/1296097 */
 
 /* This gets Google to fall into place */
 .social-share {
