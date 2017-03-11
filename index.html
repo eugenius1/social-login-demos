@@ -160,43 +160,63 @@
 </div>
 
 <p>Please <a href="http://eusebius.tech/contact/">let me know</a> if you spot something broken.</p>
-<br>
 </article>
+      
+      <br>
+      <hr>
 
-<div class="social-share">
-  <div class="twitter col-md-2 col-md-offset-0 col-sm-3 col-xs-6">
-    <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="EusebiusTech" data-show-count="true">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  <div class="facebook col-md-2 col-sm-3 col-xs-6">
-    <iframe src="https://www.facebook.com/plugins/like.php?href=http://eusebius.tech/social-login-demos/&amp;show_faces=false&amp;layout=button_count&amp;share=true" scrolling="no" frameborder="0" style="height: 21px; width: 160px;" allowTransparency="true"></iframe>
-  </div>
-  <div class="google col-md-2 col-sm-3 col-xs-6">
-    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'en-GB'}</script>
-    <g:plusone size="medium" href="http://eusebius.tech/social-login-demos/"></g:plusone>
-  </div>
-  <div class="linkedin col-md-2 col-sm-3 col-xs-6">
-    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-    <script type="IN/Share" data-url="http://eusebius.tech/social-login-demos/" data-counter="right"></script>
-  </div>
-</div>
+      <div class="social-share">
+        <div class="twitter col-md-2 col-md-offset-0 col-sm-3 col-xs-6">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="EusebiusTech" data-show-count="true">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="facebook col-md-2 col-sm-3 col-xs-6">
+          <iframe src="https://www.facebook.com/plugins/like.php?href=http://eusebius.tech/social-login-demos/&amp;show_faces=false&amp;layout=button_count&amp;share=true" scrolling="no" frameborder="0" style="height: 21px; width: 160px;" allowTransparency="true"></iframe>
+        </div>
+        <div class="google col-md-2 col-sm-3 col-xs-6">
+          <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'en-GB'}</script>
+          <g:plusone size="medium" href="http://eusebius.tech/social-login-demos/"></g:plusone>
+        </div>
+        <div class="linkedin col-md-2 col-sm-3 col-xs-6">
+          <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+          <script type="IN/Share" data-url="http://eusebius.tech/social-login-demos/" data-counter="right"></script>
+        </div>
+      </div>
 
-<div class="disqus-comments">          
-  <div class="comments">
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'eusebiustech';
-        // ensure that pages with query string get the same discussion
-              var url_parts = window.location.href.split("?");
-              var disqus_url = url_parts[0];      
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</div>
+      <hr>
+      <div class="row">
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <div class="col-sm-2 col-sm-offset-2 col-xs-3">
+          <a class="github-button" href="https://github.com/{{ include.repo }}/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download {{ include.repo }} on GitHub">Download</a>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+          <a class="github-button" href="https://github.com/{{ include.repo }}" data-icon="octicon-eye" data-count-href="/{{ include.repo }}/watchers" data-count-api="/repos/{{ include.repo }}#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch {{ include.repo }} on GitHub">Watch</a>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+          <a class="github-button" href="https://github.com/{{ include.repo }}" data-icon="octicon-star" data-count-href="/{{ include.repo }}/stargazers" data-count-api="/repos/{{ include.repo }}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star {{ include.repo }} on GitHub">Star</a>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+          <a class="github-button" href="https://github.com/{{ include.repo }}/fork" data-icon="octicon-repo-forked" data-count-href="/{{ include.repo }}/network" data-count-api="/repos/{{ include.repo }}#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork {{ include.repo }} on GitHub">Fork</a>
+        </div>
+      </div>
+      <hr>
+
+      <div class="disqus-comments">          
+        <div class="comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+              var disqus_shortname = 'eusebiustech';
+              // ensure that pages with query string get the same discussion
+                    var url_parts = window.location.href.split("?");
+                    var disqus_url = url_parts[0];      
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      </div>
       
     </div>
   </div>
