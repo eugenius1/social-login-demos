@@ -181,7 +181,7 @@ function facebookGetUserDetails() {
             message += '2 friends who also signed in to Eusebius.Tech: ' + 
               friendHtml(response.data[0]) + ' and ' + friendHtml(response.data[1]);
             break;
-          case default:
+          default:
             message += auth_count + ' friends who also signed in to Eusebius.Tech including ' + 
               friendHtml(response.data[0]) + ' and ' + friendHtml(response.data[1]);
         }
