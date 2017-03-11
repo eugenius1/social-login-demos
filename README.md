@@ -14,7 +14,7 @@ HTML simplified overview:
 ```html
 <head>
   <!-- CSS for Bootstrap and Font Awesome -->
-  <link rel="stylesheet">
+  <link rel="stylesheet" href="...">
   
   <meta property="fb:app_id" content="..." />
   <meta name="google-signin-client_id" content="..." />
@@ -47,6 +47,8 @@ HTML simplified overview:
 
   <script src="index.js"></script>
 
+  <!-- Disqus comments -->
+  <script></script>
   <!-- Google Analytics -->
   <script></script>
 </body>
@@ -57,16 +59,17 @@ HTML simplified overview:
 Origin domains that work with my Facebook App and Google Web Client:
 
 - http://eusebius.tech
-- http://local.host
+- http://localhost:4000 (just Google works fully)
 
-You will need to add `local.host` to your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system), usually this is `/etc/hosts` on UNIX-like machines (Linux, Mac OS X 10.2 and newer); something like adding the following line:
+You might need to check `localhost` is in your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system), usually this is `/etc/hosts` on UNIX-like machines (Linux, Mac OS X 10.2 and newer); something like the following line:
 
 ```
-127.0.0.1       local.host
+127.0.0.1       localhost
 ```
 
 ## Production
 
-You may wish to include your own Facebook App ID in `window.fbAsyncInit` function of [index.js](index.js) and your own `google-signin-client_id` meta in [index.html](index.html).
+You should include your own Facebook App ID in `window.fbAsyncInit` function of [index.js](index.js) and your own `google-signin-client_id` meta tag in head of [index.html](index.html). Also, either remove or update the script elements for Disqus comments and Google Analytics at the end of index.html.
+
 
 For my website, JavaScript code is minified using Google's [Closure Compiler](http://closure-compiler.appspot.com/) ([docs and API](https://developers.google.com/closure/compiler/)).
