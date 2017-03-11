@@ -86,7 +86,9 @@ function facebookGetUserDetails() {
   // https://developers.facebook.com/docs/graph-api/reference/user/
   FB.api(
     '/me', 
-    {fields: 'email,cover,name,first_name,last_name,age_range,gender,locale,picture,timezone,updated_time,verified'}, 
+    {fields:
+      'email,cover,name,first_name,last_name,age_range,gender,locale,picture,timezone,updated_time,verified'
+    }, 
     function(response) {
       if (response && !response.error) {
         console.log('Successful Facebook login for: ' + response.name);
@@ -157,27 +159,54 @@ function facebookGetUserDetails() {
         You have 1 friend who also signed in to Eusebius.Tech: Adam One.
         You have 2 friends who also signed in to Eusebius.Tech: Adam One and Beth Two.
         You have 3 friends who also signed in to Eusebius.Tech including Adam One and Beth Two.
-
-        It'd actually be better to implement the above with 4 switch statements instead of many if-statements as done below:
         */
-        var message = 'You have ' + (auth_count === 0 ? 'no' : auth_count) + ' friend';
+
+        const friendHtml = function(datum){
+          // `/profile.php?id=` did not reliably work
+          return '<a href="https://www.facebook.com/' + datum.id + '">' + datum.name + '</a>';
+        }
+
+        var message;
+        
+        message = 'You have ';
+        switch(auth_count) {
+          case 0:
+            message += 'no friends yet who signed in to Eusebius.Tech';
+            break;
+          case 1:
+            message += '1 friend who also signed in to Eusebius.Tech: ' + 
+              friendHtml(response.data[0]);
+            break;
+          case 2:
+            message += '2 friends who also signed in to Eusebius.Tech: ' + 
+              friendHtml(response.data[0]) + ' and ' + friendHtml(response.data[1]);
+            break;
+          case default:
+            message += auth_count + ' friends who also signed in to Eusebius.Tech including ' + 
+              friendHtml(response.data[0]) + ' and ' + friendHtml(response.data[1]);
+        }
+
+        /* 
+        It's probably better to implement with the 4 switch statements above instead 
+        of many if-statements as commented out below:
+        */
+
+        /*
+        message = 'You have ' + (auth_count === 0 ? 'no' : auth_count) + ' friend';
         if(auth_count != 1) message += 's';
         if(auth_count === 0) message += ' yet';
         message += ' who'
         if(auth_count >= 1) message += ' also';
         message += ' signed in to Eusebius.Tech';
         if(auth_count >= 1){
-          const friendHtml = function(datum){
-            // `/profile.php?id=` did not reliably work
-            return '<a href="https://www.facebook.com/' + datum.id + '">' + datum.name + '</a>';
-          }
-
           if(auth_count >= 3) message += ' including ';
           else message += ': ';
           message += friendHtml(response.data[0]);
           if(auth_count >= 2) 
             message += ' and ' + friendHtml(response.data[1]);
         }
+        */
+
         message += '.';
         document.getElementById('facebook-friends').innerHTML = message;
       }
