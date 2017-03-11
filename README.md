@@ -56,7 +56,7 @@ HTML simplified overview:
 
 ## Cloning and playing with this
 
-Origin domains that work with my Facebook App and Google Web Client:
+App domains/ JavaScript origins that work with my Facebook App/ Google Web Client:
 
 - http://eusebius.tech
 - http://localhost:4000 (just Google works fully)
