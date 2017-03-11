@@ -19,7 +19,16 @@ footer .copyright {
   text-align: center;
   color: #FFF;
   text-shadow: 1px 1px 3px #000;
+  font-weight: 800;
+  padding: 100px 0;
 }
+
+/**/
+@media only screen and (min-width: 768px) {
+  .cover-img .heading  {
+    padding: 150px 0;
+  }
+} 
 
 /* --- Social share buttons --- 
 https://gist.github.com/thebigreason/1296097 */
