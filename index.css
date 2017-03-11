@@ -1,0 +1,46 @@
+/* center main images */
+article img {
+  display: block;
+  margin: auto;
+}
+
+footer .copyright {
+    text-align: center;
+}
+
+/* --- Social share buttons --- */
+
+/* This gets Google to fall into place */
+.social-share {
+  font-size: 1px;
+}
+
+/* This gets Facebook to fall into place */
+.social-share iframe {
+  vertical-align: middle;
+}
+
+/* Set an optional width for your button wrappers */
+.social-share div,
+.social-share span {
+  display: inline-block;
+  /*width: 110px;*/
+  padding: 0 5px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+}
+
+.social-share .twitter {
+  padding-right: 30px;
+}
+
+.social-share .facebook {
+  padding-right: 40px;
+}
+
+.social-share .linkedin {
+  padding: 0 0px;
+  text-align: left;
+  /*height: 21px;
+  width: 110px;*/
+}

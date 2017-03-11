@@ -13,7 +13,9 @@ HTML simplified overview:
 
 ```html
 <head>
+  <!-- CSS for Bootstrap and Font Awesome -->
   <link rel="stylesheet">
+  
   <meta property="fb:app_id" content="..." />
   <meta name="google-signin-client_id" content="..." />
 </head>
@@ -27,6 +29,7 @@ HTML simplified overview:
     <!-- Facebook info card -->
     <div class="row">
       <div class="jumbotron">
+        <!-- id is important in index.js -->
         <h3 class="text-center" id="facebook-card-title">Facebook's minimum</h3>
         <div class="row" id="facebook-cover"></div>
         ...
@@ -34,7 +37,7 @@ HTML simplified overview:
     </div>
 
     <!-- Google login button -->
-    <div class="g-signin2">
+    <div class="g-signin2" data-onsuccess="GoogleOnSignIn"></div>
 
     <!-- Google info card -->
     <div class="row">...</div>
