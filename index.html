@@ -183,36 +183,19 @@
       </div>
 
       <hr>
-      <div class="row">
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <div class="col-sm-2 col-sm-offset-2 col-xs-3">
-          <a class="github-button" href="https://github.com/{{ include.repo }}/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download {{ include.repo }} on GitHub">Download</a>
-        </div>
-        <div class="col-sm-2 col-xs-3">
-          <a class="github-button" href="https://github.com/{{ include.repo }}" data-icon="octicon-eye" data-count-href="/{{ include.repo }}/watchers" data-count-api="/repos/{{ include.repo }}#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch {{ include.repo }} on GitHub">Watch</a>
-        </div>
-        <div class="col-sm-2 col-xs-3">
-          <a class="github-button" href="https://github.com/{{ include.repo }}" data-icon="octicon-star" data-count-href="/{{ include.repo }}/stargazers" data-count-api="/repos/{{ include.repo }}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star {{ include.repo }} on GitHub">Star</a>
-        </div>
-        <div class="col-sm-2 col-xs-3">
-          <a class="github-button" href="https://github.com/{{ include.repo }}/fork" data-icon="octicon-repo-forked" data-count-href="/{{ include.repo }}/network" data-count-api="/repos/{{ include.repo }}#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork {{ include.repo }} on GitHub">Fork</a>
-        </div>
-      </div>
-      <hr>
 
       <div class="disqus-comments">          
         <div class="comments">
           <div id="disqus_thread"></div>
           <script type="text/javascript">
-              var disqus_shortname = 'eusebiustech';
-              // ensure that pages with query string get the same discussion
-                    var url_parts = window.location.href.split("?");
-                    var disqus_url = url_parts[0];      
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
+            var disqus_shortname = 'eusebiustech';
+            // ensure that pages with query string get the same discussion
+            var disqus_url = 'http://eusebius.tech/social-login-demos/';      
+            (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
           </script>
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
@@ -223,6 +206,8 @@
 </div>
 <!-- end main page container starting just before <article> -->
 
+    <br>
+    <hr>
     <footer>
       <div class="container">
         <div class="row">
@@ -245,6 +230,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-81211584-1', 'auto');
+      ga('set', 'page', '/social-login-demos/');
       ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
