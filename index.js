@@ -216,7 +216,7 @@ function facebookGetUserDetails() {
 function GoogleOnSignIn(googleUser) {
   console.log('Signed in to Google. Fetching your information.... ');
 
-  // https://developers.google.com/identity/sign-in/web/reference#googleusergetbasicprofile
+  // https://developers.google.com/identity/sign-in/web/reference
   var profile = googleUser.getBasicProfile();
 
   var response = {};
@@ -226,6 +226,9 @@ function GoogleOnSignIn(googleUser) {
   response.email = profile.getEmail(); // This is null if the 'email' scope is not present.
   response.first_name = profile.getGivenName();
   response.last_name = profile.getFamilyName();
+
+  response.scopes = googleUser.getGrantedScopes();
+
   console.log('Successful Google login for: ' + response.name);
   console.log(response);
 
@@ -236,7 +239,10 @@ function GoogleOnSignIn(googleUser) {
   // document.getElementById('google-card-title').innerHTML = response.name;
   document.getElementById('google-picture').innerHTML =
     '<img src="' + response.picture + '" alt="Your Google Profile Picture" title="You!">';
+  
+  document.getElementById('google-id').innerHTML = response.id;
   document.getElementById('google-firstname').innerHTML = response.first_name;
   document.getElementById('google-lastname').innerHTML = response.last_name;
   document.getElementById('google-email').innerHTML = response.email;
+  document.getElementById('google-scopes').innerHTML = scopes;
 }
