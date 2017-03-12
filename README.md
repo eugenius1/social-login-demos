@@ -13,43 +13,52 @@ HTML simplified overview:
 
 ```html
 <head>
-  <!-- CSS for Bootstrap and Font Awesome -->
-  <link rel="stylesheet" href="...">
+  <!-- CSS for Bootstrap, Font Awesome and customisation -->
+  <link rel="stylesheet">
   
   <meta property="fb:app_id" content="..." />
   <meta name="google-signin-client_id" content="..." />
+
+  <!-- Google Analytics -->
+  <script></script>
 </head>
 
 <body>
   <header>...</header>
-  <article>
-    <!-- Facebook login button -->
-    <fb:login-button scope="public_profile,email,user_friends" onlogin="facebookCheckLoginState();"></fb:login-button>
 
-    <!-- Facebook info card -->
+  <div class="container">
     <div class="row">
-      <div class="jumbotron">
-        <!-- id is important in index.js -->
-        <h3 class="text-center" id="facebook-card-title">Facebook's minimum</h3>
-        <div class="row" id="facebook-cover"></div>
-        ...
-      </div>
+      <article>
+        <!-- Facebook login button -->
+        <fb:login-button scope="public_profile,email,user_friends" onlogin="facebookCheckLoginState();"></fb:login-button>
+
+        <!-- Facebook info card -->
+        <div class="row">
+          <div class="jumbotron">
+            <!-- id is important in index.js -->
+            <h3 class="text-center" id="facebook-card-title">Facebook's minimum</h3>
+            <div class="row" id="facebook-cover"></div>
+            ...
+          </div>
+        </div>
+
+        <!-- Google login button -->
+        <div class="g-signin2" data-onsuccess="GoogleOnSignIn"></div>
+
+        <!-- Google info card -->
+        <div class="row">
+          ...
+        </div>
+
+      </article>
     </div>
+  </div>
 
-    <!-- Google login button -->
-    <div class="g-signin2" data-onsuccess="GoogleOnSignIn"></div>
-
-    <!-- Google info card -->
-    <div class="row">...</div>
-
-  </article>
   <footer>...</footer>
 
   <script src="index.js"></script>
 
   <!-- Disqus comments -->
-  <script></script>
-  <!-- Google Analytics -->
   <script></script>
 </body>
 ```
@@ -69,7 +78,7 @@ You might need to check `localhost` is in your [hosts file](https://en.wikipedia
 
 ## Production
 
-You should include your own Facebook App ID in `window.fbAsyncInit` function of [index.js](index.js) and your own `google-signin-client_id` meta tag in head of [index.html](index.html). Also, either remove or update the script elements for Disqus comments and Google Analytics at the end of index.html.
+You should include your own Facebook App ID in `window.fbAsyncInit` function of [index.js](index.js) and your own `google-signin-client_id` meta content in the head of [index.html](index.html). Also, either remove or update the script elements for Disqus comments (end of index.html) and Google Analytics (in head).
 
 
 For my website, JavaScript code is minified using Google's [Closure Compiler](http://closure-compiler.appspot.com/) ([docs and API](https://developers.google.com/closure/compiler/)).
