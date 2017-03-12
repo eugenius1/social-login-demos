@@ -107,6 +107,7 @@ function facebookGetUserDetails() {
           '<img src="https://graph.facebook.com/v2.7/' + response.id + 
           '/picture?type=large" alt="Your Facebook Profile Picture" title="You!">';
 
+        document.getElementById('facebook-id').innerHTML = response.id;
         document.getElementById('facebook-gender').innerHTML = response.gender.capitalizeFirstLetter();
         document.getElementById('facebook-firstname').innerHTML = response.first_name;
         document.getElementById('facebook-lastname').innerHTML = response.last_name;
