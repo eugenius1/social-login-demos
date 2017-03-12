@@ -142,12 +142,12 @@ function facebookGetUserDetails() {
         // date string received is converted to a nicer human-readable format
         document.getElementById('facebook-lastupdated').innerHTML = new Date(response.updated_time);
       }
-  });
+    }
+  );
 
   // https://developers.facebook.com/docs/graph-api/reference/user/friends
   FB.api(
-    '/me/friends', 
-    {fields: ''}, 
+    '/me/friends',
     function(response){
       if (response && !response.error) {
         console.log(response);
@@ -212,7 +212,8 @@ function facebookGetUserDetails() {
         message += '.';
         document.getElementById('facebook-friends').innerHTML = message;
       }
-  });
+    }
+  );
 }
 
 function GoogleOnSignIn(googleUser) {
