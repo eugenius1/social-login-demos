@@ -92,6 +92,7 @@ function facebookGetUserDetails() {
     function(response) {
       if (response && !response.error) {
         console.log('Successful Facebook login for: ' + response.name);
+        console.log(response);
         
         var alertDiv = document.getElementById('facebook-thanks-name')
         alertDiv.innerHTML = 'Thanks, ' + response.first_name + '!';
@@ -239,10 +240,10 @@ function GoogleOnSignIn(googleUser) {
   // document.getElementById('google-card-title').innerHTML = response.name;
   document.getElementById('google-picture').innerHTML =
     '<img src="' + response.picture + '" alt="Your Google Profile Picture" title="You!">';
-  
+
   document.getElementById('google-id').innerHTML = response.id;
   document.getElementById('google-firstname').innerHTML = response.first_name;
   document.getElementById('google-lastname').innerHTML = response.last_name;
   document.getElementById('google-email').innerHTML = response.email;
-  document.getElementById('google-scopes').innerHTML = scopes;
+  document.getElementById('google-scopes').innerHTML = response.scopes;
 }
