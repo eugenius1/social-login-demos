@@ -52,8 +52,6 @@ https://gist.github.com/thebigreason/1296097 */
 .social-share div,
 .social-share span {
   display: inline-block;
-  /*width: 110px;*/
-  padding: 0 5px;
   padding-bottom: 10px;
   vertical-align: middle;
 }
@@ -66,9 +64,7 @@ https://gist.github.com/thebigreason/1296097 */
   padding-right: 40px;
 }
 
-.social-share .linkedin {
+.social-share .linkedin div {
   padding: 0 1px;
   text-align: left;
-  /*height: 21px;
-  width: 110px;*/
 }
